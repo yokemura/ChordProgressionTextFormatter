@@ -11,6 +11,8 @@ struct Line {
     let bars: [Bar]
     
     static func fromString(_ string: String) throws -> Line {
+        let components = string.components(separatedBy: "|")
+        
         return Line(bars: [])
     }
 }

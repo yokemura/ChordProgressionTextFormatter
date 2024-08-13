@@ -16,23 +16,22 @@ struct Section {
     static func fromString(_ string: String) throws -> Section {
         let lines = string.components(separatedBy: .newlines)
         
-        guard let first = lines.first else {
+        guard let firstLine = lines.first else {
             throw SectionEmptyException()
         }
         
         let regex = /\[.*\]/
 
-        if let match = first.wholeMatch(of: regex) {
-            let lineObjs = try lines[1...].map {
-                try Line.fromString($0)
-            }
-            return Section(title: String(match.0), lines: lineObjs)
-        } else {
+        if firstLine.contains("|") {
             let lineObjs = try lines.map {
                 try Line.fromString($0)
             }
             return Section(title: nil, lines: lineObjs)
-        }
-        
+        } else {
+            let lineObjs = try lines[1...].map {
+                try Line.fromString($0)
+            }
+            return Section(title: firstLine, lines: lineObjs)
+        }        
     }
 }
