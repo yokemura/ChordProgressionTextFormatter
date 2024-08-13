@@ -20,8 +20,6 @@ struct Section {
             throw SectionEmptyException()
         }
         
-        let regex = /\[.*\]/
-
         if firstLine.contains("|") {
             let lineObjs = try lines.map {
                 try Line.fromString($0)

@@ -160,4 +160,22 @@ final class ChordProgressionTextFormatterTests: XCTestCase {
             }
         }
     }
+    
+    func testLines() throws {
+        var l = try Line.fromString("|C Am |D7  |")
+        XCTAssertEqual(l.bars.count, 2)
+        
+        // No leading "|"
+        l = try Line.fromString("C Am |D7  |")
+        XCTAssertEqual(l.bars.count, 2)
+        
+        // No trailing "|"
+        l = try Line.fromString("C Am |D7  ")
+        XCTAssertEqual(l.bars.count, 2)
+        
+        // Multiple "|"s
+        l = try Line.fromString("|C Am |D7  ||")
+        XCTAssertEqual(l.bars.count, 2)
+    }
+    
 }
