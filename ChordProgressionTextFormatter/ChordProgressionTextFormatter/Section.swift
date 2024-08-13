@@ -14,7 +14,7 @@ struct Section {
     let lines: [Line]
     
     static func fromString(_ string: String) throws -> Section {
-        let lines = string.components(separatedBy: .newlines)
+        let lines = string.components(separatedBy: .newlines).filter { !$0.isEmpty }
         
         guard let firstLine = lines.first else {
             throw SectionEmptyException()

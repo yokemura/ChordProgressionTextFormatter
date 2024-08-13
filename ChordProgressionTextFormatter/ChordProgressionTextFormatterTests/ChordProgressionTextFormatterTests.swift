@@ -178,4 +178,22 @@ final class ChordProgressionTextFormatterTests: XCTestCase {
         XCTAssertEqual(l.bars.count, 2)
     }
     
+    func testDocument() throws {
+        let inputText = """
+
+[A]
+Am D7|G |Am D7 |G |
+Am |Bm7 |C  | D7|
+
+[B]
+D7 | | | |
+D7 | | | |
+
+"""
+        let doc = try Document.fromString(inputText)
+        
+        XCTAssertEqual(doc.sections.count, 2)
+
+    }
+    
 }
