@@ -7,15 +7,32 @@
 
 import Foundation
 
-struct Line {
-    let bars: [Bar]
-}
+struct SectionEmptyException: Error {}
 
 struct Section {
     let title: String?
     let lines: [Line]
     
-//    static func fromString(_ string: String) -> Section {
-//        
-//    }
+    static func fromString(_ string: String) throws -> Section {
+        let lines = string.components(separatedBy: .newlines)
+        
+        guard let first = lines.first else {
+            throw SectionEmptyException()
+        }
+        
+        let regex = /\[.*\]/
+
+        if let match = first.wholeMatch(of: regex) {
+            let lineObjs = try lines[1...].map {
+                try Line.fromString($0)
+            }
+            return Section(title: String(match.0), lines: lineObjs)
+        } else {
+            let lineObjs = try lines.map {
+                try Line.fromString($0)
+            }
+            return Section(title: nil, lines: lineObjs)
+        }
+        
+    }
 }

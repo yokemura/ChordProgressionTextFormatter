@@ -7,11 +7,15 @@
 
 import Foundation
 
+struct InvalidRootCharacterException: Error {
+    let character: String
+}
+
 struct Chord {
     let root: Int
     let quality: String
     
-    static func fromString(_ string: String) -> Chord {
+    static func fromString(_ string: String) throws -> Chord {
         let lowered = string.lowercased()
         
         // Rootの取得
@@ -22,7 +26,7 @@ struct Chord {
         
         let roots = ["c", "", "d", "", "e", "f", "", "g", "", "a", "", "b"]
         guard let index = roots.firstIndex(of: rootChar) else {
-            fatalError("Root string should begin with [abcdefg].")
+            throw InvalidRootCharacterException(character: rootChar)
         }
                 
         // 2文字目を取得

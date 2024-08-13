@@ -15,6 +15,8 @@
 		4BC3BD052C6B527100A1448E /* Bar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC3BD032C6B527100A1448E /* Bar.swift */; };
 		4BC3BD072C6B771D00A1448E /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC3BD062C6B771D00A1448E /* Section.swift */; };
 		4BC3BD082C6B771D00A1448E /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC3BD062C6B771D00A1448E /* Section.swift */; };
+		F326157C2C6BABAA00916D92 /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = F326157B2C6BABAA00916D92 /* Line.swift */; };
+		F326157D2C6BABAA00916D92 /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = F326157B2C6BABAA00916D92 /* Line.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -37,6 +39,7 @@
 		4BC3BCFD2C6B4EC700A1448E /* ChordProgressionTextFormatterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChordProgressionTextFormatterTests.swift; sourceTree = "<group>"; };
 		4BC3BD032C6B527100A1448E /* Bar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bar.swift; sourceTree = "<group>"; };
 		4BC3BD062C6B771D00A1448E /* Section.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
+		F326157B2C6BABAA00916D92 /* Line.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +85,7 @@
 				4BC3BCF22C6B453C00A1448E /* Chord.swift */,
 				4BC3BD032C6B527100A1448E /* Bar.swift */,
 				4BC3BD062C6B771D00A1448E /* Section.swift */,
+				F326157B2C6BABAA00916D92 /* Line.swift */,
 			);
 			path = ChordProgressionTextFormatter;
 			sourceTree = "<group>";
@@ -187,6 +191,7 @@
 				4BC3BD072C6B771D00A1448E /* Section.swift in Sources */,
 				4BC3BD042C6B527100A1448E /* Bar.swift in Sources */,
 				4BC3BCEC2C6B450400A1448E /* main.swift in Sources */,
+				F326157C2C6BABAA00916D92 /* Line.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -198,6 +203,7 @@
 				4BC3BD082C6B771D00A1448E /* Section.swift in Sources */,
 				4BC3BD052C6B527100A1448E /* Bar.swift in Sources */,
 				4BC3BCFE2C6B4EC700A1448E /* ChordProgressionTextFormatterTests.swift in Sources */,
+				F326157D2C6BABAA00916D92 /* Line.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

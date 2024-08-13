@@ -14,4 +14,17 @@ enum BarComponent {
 
 struct Bar {
     let components: [BarComponent]
+    
+    static func fromString(_ string: String) throws -> Bar {
+        let stringComponents = string.components(separatedBy: .whitespaces)
+        let components: [BarComponent] = try stringComponents.map { comp in
+            if comp == "-" {
+                return .spacer
+            } else {
+                let chord = try Chord.fromString(string)
+                return .chord(chord: chord)
+            }
+        }
+        return Bar(components: components)
+    }
 }
