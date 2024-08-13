@@ -178,4 +178,42 @@ final class ChordProgressionTextFormatterTests: XCTestCase {
         XCTAssertEqual(l.bars.count, 2)
     }
     
+    func testSections() throws {
+        var s = try Section.fromString("""
+[A]
+Cm | Dm |
+EbM7 | F/G ||
+""")
+        XCTAssertEqual(s.title, "[A]")
+        XCTAssertEqual(s.lines.count, 2)
+        
+        // No title
+        s = try Section.fromString("""
+Cm | Dm |
+EbM7 | F/G ||
+""")
+        XCTAssertNil(s.title)
+        XCTAssertEqual(s.lines.count, 2)
+
+        // Name only
+        s = try Section.fromString("""
+[New Section]
+""")
+        XCTAssertEqual(s.title, "[New Section]")
+        XCTAssert(s.lines.isEmpty)
+        
+        // Invalid section
+        do {
+            s = try Section.fromString("""
+Cm | Dm |
+[Section]
+EbM7 | F/G ||
+""")
+            XCTFail("Should throw error")
+        } catch {
+            XCTAssert(error is InvalidRootCharacterException)
+        }
+        
+
+    }
 }

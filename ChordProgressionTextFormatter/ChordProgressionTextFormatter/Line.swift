@@ -11,7 +11,7 @@ struct Line {
     let bars: [Bar]
     
     static func fromString(_ string: String) throws -> Line {
-        var components = string.components(separatedBy: "|")
+        let components = string.components(separatedBy: "|")
         let bars: [Bar] = try components.compactMap { comp in
             if comp.isEmpty {
                 return nil
