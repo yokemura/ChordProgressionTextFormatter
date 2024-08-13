@@ -14,4 +14,8 @@ struct Line {
 struct Section {
     let title: String?
     let lines: [Line]
+    
+//    static func fromString(_ string: String) -> Section {
+//        
+//    }
 }
