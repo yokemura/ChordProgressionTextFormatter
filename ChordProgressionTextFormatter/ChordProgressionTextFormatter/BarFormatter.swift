@@ -15,7 +15,7 @@ struct BarFormatter {
         let baseCount = barWidth / bar.components.count
         let remainder = barWidth % bar.components.count
         
-        var presentations = bar.components.enumerated().map { index, component in
+        let presentations = bar.components.enumerated().map { index, component in
             let isLast = index == bar.components.count - 1
             return BarComponentPresentation(
                 essentialString: component.essentialString(isLast: isLast),
@@ -29,9 +29,9 @@ struct BarFormatter {
                 lhs.adjustedPaddingCount < rhs.adjustedPaddingCount
             })
             let richest = presentations.max(by: {lhs, rhs in
-                lhs.adjustedPaddingCount > rhs.adjustedPaddingCount
+                lhs.adjustedPaddingCount < rhs.adjustedPaddingCount
             })
-            guard var poorest = poorest, var richest = richest else {
+            guard let poorest = poorest, let richest = richest else {
                 // No consideration needed
                 isDone = true
                 continue
@@ -71,7 +71,8 @@ class BarComponentPresentation {
     }
     
     var paddedString: String {
-        essentialString + String.init(repeating: " ", count: idealPaddingCount + paddingCountAdjustment)
+        let count = idealPaddingCount + paddingCountAdjustment
+        return essentialString + String.init(repeating: " ", count: count < 0 ? 0 : count)
     }
     
     var adjustedPaddingCount: Int {
@@ -88,7 +89,7 @@ extension BarComponent {
     func essentialString(isLast: Bool) -> String {
         switch self {
         case .chord(let chord):
-            let roots = ["C", "C#", "D", "D#", "E", "F", "F#", "G", "Ab", "A", "Bb", "B"]
+            let roots = ["C", "C#", "D", "Eb", "E", "F", "F#", "G", "Ab", "A", "Bb", "B"]
             let essentialPadding = isLast ? "" : " "
             return roots[chord.root] + chord.quality + essentialPadding
         case .spacer:
