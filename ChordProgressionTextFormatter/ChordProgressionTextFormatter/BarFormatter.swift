@@ -12,6 +12,10 @@ struct BarFormatter {
     let barWidth: Int
 
     var formatted: String {
+        if bar.components.count == 0 {
+            return String.init(repeating: " ", count: barWidth)
+        }
+        
         let baseCount = barWidth / bar.components.count
         let remainder = barWidth % bar.components.count
         
@@ -46,6 +50,7 @@ struct BarFormatter {
                 isDone = true
                 continue
             }
+            // The richest gives the padding to the poorest
             richest.setPaddingCountAdjustment(richest.paddingCountAdjustment - 1)
             poorest.setPaddingCountAdjustment(poorest.paddingCountAdjustment + 1)
         }

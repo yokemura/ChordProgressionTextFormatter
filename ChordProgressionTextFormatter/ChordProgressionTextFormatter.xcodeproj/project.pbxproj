@@ -12,6 +12,8 @@
 		4B64060C2C6C4A7D00F9FEC8 /* BarFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B64060B2C6C4A7D00F9FEC8 /* BarFormatter.swift */; };
 		4B64060D2C6C4A7D00F9FEC8 /* BarFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B64060B2C6C4A7D00F9FEC8 /* BarFormatter.swift */; };
 		4B64060F2C6CD7CF00F9FEC8 /* BarFormatterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B64060E2C6CD7CF00F9FEC8 /* BarFormatterTests.swift */; };
+		4B6406112C6CDDC800F9FEC8 /* DocumentFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6406102C6CDDC800F9FEC8 /* DocumentFormatter.swift */; };
+		4B6406122C6CDDC800F9FEC8 /* DocumentFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6406102C6CDDC800F9FEC8 /* DocumentFormatter.swift */; };
 		4BC3BCEC2C6B450400A1448E /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC3BCEB2C6B450400A1448E /* main.swift */; };
 		4BC3BCF32C6B453C00A1448E /* Chord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC3BCF22C6B453C00A1448E /* Chord.swift */; };
 		4BC3BCFE2C6B4EC700A1448E /* ChordProgressionTextFormatterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC3BCFD2C6B4EC700A1448E /* ChordProgressionTextFormatterTests.swift */; };
@@ -40,6 +42,7 @@
 		4B6406082C6C226400F9FEC8 /* Document.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
 		4B64060B2C6C4A7D00F9FEC8 /* BarFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarFormatter.swift; sourceTree = "<group>"; };
 		4B64060E2C6CD7CF00F9FEC8 /* BarFormatterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarFormatterTests.swift; sourceTree = "<group>"; };
+		4B6406102C6CDDC800F9FEC8 /* DocumentFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentFormatter.swift; sourceTree = "<group>"; };
 		4BC3BCE82C6B450400A1448E /* ChordProgressionTextFormatter */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ChordProgressionTextFormatter; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BC3BCEB2C6B450400A1448E /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		4BC3BCF22C6B453C00A1448E /* Chord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chord.swift; sourceTree = "<group>"; };
@@ -96,6 +99,7 @@
 				F326157B2C6BABAA00916D92 /* Line.swift */,
 				4B6406082C6C226400F9FEC8 /* Document.swift */,
 				4B64060B2C6C4A7D00F9FEC8 /* BarFormatter.swift */,
+				4B6406102C6CDDC800F9FEC8 /* DocumentFormatter.swift */,
 			);
 			path = ChordProgressionTextFormatter;
 			sourceTree = "<group>";
@@ -203,6 +207,7 @@
 				4B6406092C6C226400F9FEC8 /* Document.swift in Sources */,
 				4BC3BD042C6B527100A1448E /* Bar.swift in Sources */,
 				4B64060C2C6C4A7D00F9FEC8 /* BarFormatter.swift in Sources */,
+				4B6406112C6CDDC800F9FEC8 /* DocumentFormatter.swift in Sources */,
 				4BC3BCEC2C6B450400A1448E /* main.swift in Sources */,
 				F326157C2C6BABAA00916D92 /* Line.swift in Sources */,
 			);
@@ -216,6 +221,7 @@
 				4BC3BD082C6B771D00A1448E /* Section.swift in Sources */,
 				4B64060A2C6C226400F9FEC8 /* Document.swift in Sources */,
 				4BC3BD052C6B527100A1448E /* Bar.swift in Sources */,
+				4B6406122C6CDDC800F9FEC8 /* DocumentFormatter.swift in Sources */,
 				4B64060D2C6C4A7D00F9FEC8 /* BarFormatter.swift in Sources */,
 				4BC3BCFE2C6B4EC700A1448E /* ChordProgressionTextFormatterTests.swift in Sources */,
 				4B64060F2C6CD7CF00F9FEC8 /* BarFormatterTests.swift in Sources */,
