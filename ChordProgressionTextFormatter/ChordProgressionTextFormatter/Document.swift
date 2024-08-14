@@ -7,16 +7,26 @@
 
 import Foundation
 
+enum LineComponent {
+    case line(line: Line)
+    case comment(text: String)
+}
+
 struct Document {
-    let sections: [Section]
+    let lineComponents: [LineComponent]
     
     static func fromString(_ string: String) throws -> Document {
-        let sectionStrings = string.split(separator: try Regex("\n\n+"))
+        let lines = string.components(separatedBy: .newlines)
         
-        let sections = try sectionStrings.map {
-            return try Section.fromString(String($0))
+        let components: [LineComponent] = try lines.map { lineStr in
+            if lineStr.contains("|") {
+                let line = try Line.fromString(lineStr)
+                return .line(line: line)
+            } else {
+                return .comment(text: lineStr)
+            }
         }
-
-        return Document(sections: sections)
+        
+        return Document(lineComponents: components)
     }
 }
