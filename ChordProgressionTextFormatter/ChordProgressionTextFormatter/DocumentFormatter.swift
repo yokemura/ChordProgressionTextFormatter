@@ -10,28 +10,32 @@ import Foundation
 struct DocumentFormatter {
     let document: Document
     let barWidth: Int
+    let transpose: Int
+    
+    init(document: Document, barWidth: Int, transpose: Int = 0) {
+        self.document = document
+        self.barWidth = barWidth
+        self.transpose = transpose
+    }
     
     var formatted: String {
-        document.sections.map {
-            joinSection($0)
-        }.joined(separator: "\n\n")
-    }
-    
-    func joinSection(_ section: Section) -> String {
-        let contents = section.lines.map {
-            joinLine($0)
+        document.lineComponents.map { comp in
+            switch comp {
+            case .comment(let text):
+                return text
+            case .line(let line):
+                return joinLine(line)
+            }
         }.joined(separator: "\n")
-        
-        if let title = section.title {
-            return title + "\n" + contents
-        } else {
-            return contents
-        }
-    }
-    
+    }    
+
     func joinLine(_ line: Line) -> String {
         let contents = line.bars.map {
-            BarFormatter(bar: $0, barWidth: barWidth).formatted
+            BarFormatter(
+                bar: $0,
+                barWidth: barWidth,
+                transpose: transpose
+            ).formatted
         }.joined(separator: "|")
         return "|\(contents)|"
     }

@@ -178,45 +178,6 @@ final class ChordProgressionTextFormatterTests: XCTestCase {
         XCTAssertEqual(l.bars.count, 2)
     }
     
-    func testSections() throws {
-        var s = try Section.fromString("""
-[A]
-Cm | Dm |
-EbM7 | F/G ||
-""")
-        XCTAssertEqual(s.title, "[A]")
-        XCTAssertEqual(s.lines.count, 2)
-        
-        // No title
-        s = try Section.fromString("""
-Cm | Dm |
-EbM7 | F/G ||
-""")
-        XCTAssertNil(s.title)
-        XCTAssertEqual(s.lines.count, 2)
-
-        // Name only
-        s = try Section.fromString("""
-[New Section]
-""")
-        XCTAssertEqual(s.title, "[New Section]")
-        XCTAssert(s.lines.isEmpty)
-        
-        // Invalid section
-        do {
-            s = try Section.fromString("""
-Cm | Dm |
-[Section]
-EbM7 | F/G ||
-""")
-            XCTFail("Should throw error")
-        } catch {
-            XCTAssert(error is InvalidRootCharacterException)
-        }
-        
-
-    }
-    
     func testDocument() throws {
         let inputText = """
 
@@ -231,7 +192,28 @@ D7 | | | |
 """
         let doc = try Document.fromString(inputText)
         
-        XCTAssertEqual(doc.sections.count, 2)
+        XCTAssertEqual(doc.lineComponents.count, 9)
+        
+        switch doc.lineComponents[0] {
+        case .comment(let text):
+            XCTAssertEqual(text, "")
+        case .line:
+            XCTFail()
+        }
+
+        switch doc.lineComponents[1] {
+        case .comment(let text):
+            XCTAssertEqual(text, "[A]")
+        case .line:
+            XCTFail()
+        }
+
+        switch doc.lineComponents[2] {
+        case .comment:
+            XCTFail()
+        case .line(let line):
+            XCTAssertEqual(line.bars.count, 4)
+        }
 
     }
     

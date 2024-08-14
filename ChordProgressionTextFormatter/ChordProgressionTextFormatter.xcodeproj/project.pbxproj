@@ -20,8 +20,6 @@
 		4BC3BD022C6B4FD300A1448E /* Chord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC3BCF22C6B453C00A1448E /* Chord.swift */; };
 		4BC3BD042C6B527100A1448E /* Bar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC3BD032C6B527100A1448E /* Bar.swift */; };
 		4BC3BD052C6B527100A1448E /* Bar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC3BD032C6B527100A1448E /* Bar.swift */; };
-		4BC3BD072C6B771D00A1448E /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC3BD062C6B771D00A1448E /* Section.swift */; };
-		4BC3BD082C6B771D00A1448E /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC3BD062C6B771D00A1448E /* Section.swift */; };
 		F326157C2C6BABAA00916D92 /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = F326157B2C6BABAA00916D92 /* Line.swift */; };
 		F326157D2C6BABAA00916D92 /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = F326157B2C6BABAA00916D92 /* Line.swift */; };
 /* End PBXBuildFile section */
@@ -49,7 +47,6 @@
 		4BC3BCFB2C6B4EC700A1448E /* ChordProgressionTextFormatterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChordProgressionTextFormatterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BC3BCFD2C6B4EC700A1448E /* ChordProgressionTextFormatterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChordProgressionTextFormatterTests.swift; sourceTree = "<group>"; };
 		4BC3BD032C6B527100A1448E /* Bar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bar.swift; sourceTree = "<group>"; };
-		4BC3BD062C6B771D00A1448E /* Section.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
 		F326157B2C6BABAA00916D92 /* Line.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -95,7 +92,6 @@
 				4BC3BCEB2C6B450400A1448E /* main.swift */,
 				4BC3BCF22C6B453C00A1448E /* Chord.swift */,
 				4BC3BD032C6B527100A1448E /* Bar.swift */,
-				4BC3BD062C6B771D00A1448E /* Section.swift */,
 				F326157B2C6BABAA00916D92 /* Line.swift */,
 				4B6406082C6C226400F9FEC8 /* Document.swift */,
 				4B64060B2C6C4A7D00F9FEC8 /* BarFormatter.swift */,
@@ -203,7 +199,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4BC3BCF32C6B453C00A1448E /* Chord.swift in Sources */,
-				4BC3BD072C6B771D00A1448E /* Section.swift in Sources */,
 				4B6406092C6C226400F9FEC8 /* Document.swift in Sources */,
 				4BC3BD042C6B527100A1448E /* Bar.swift in Sources */,
 				4B64060C2C6C4A7D00F9FEC8 /* BarFormatter.swift in Sources */,
@@ -218,7 +213,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4BC3BD022C6B4FD300A1448E /* Chord.swift in Sources */,
-				4BC3BD082C6B771D00A1448E /* Section.swift in Sources */,
 				4B64060A2C6C226400F9FEC8 /* Document.swift in Sources */,
 				4BC3BD052C6B527100A1448E /* Bar.swift in Sources */,
 				4B6406122C6CDDC800F9FEC8 /* DocumentFormatter.swift in Sources */,

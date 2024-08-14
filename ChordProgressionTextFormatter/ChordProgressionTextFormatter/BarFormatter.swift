@@ -10,7 +10,14 @@ import Foundation
 struct BarFormatter {
     let bar: Bar
     let barWidth: Int
+    let transpose: Int
 
+    init(bar: Bar, barWidth: Int, transpose: Int = 0) {
+        self.bar = bar
+        self.barWidth = barWidth
+        self.transpose = transpose
+    }
+    
     var formatted: String {
         if bar.components.count == 0 {
             return String.init(repeating: " ", count: barWidth)
@@ -21,9 +28,11 @@ struct BarFormatter {
         
         let presentations = bar.components.enumerated().map { index, component in
             let isLast = index == bar.components.count - 1
+            let essentialString = component.essentialString(isLast: isLast, transpose: transpose)
+            let assignedWidth = index < remainder ? baseCount + 1 : baseCount
             return BarComponentPresentation(
-                essentialString: component.essentialString(isLast: isLast),
-                assignedWidth: index < remainder ? baseCount + 1 : baseCount
+                essentialString: essentialString,
+                assignedWidth: assignedWidth
             )
         }
         
@@ -91,12 +100,17 @@ class BarComponentPresentation {
 }
 
 extension BarComponent {
-    func essentialString(isLast: Bool) -> String {
+    func essentialString(isLast: Bool, transpose: Int) -> String {
         switch self {
         case .chord(let chord):
             let roots = ["C", "C#", "D", "Eb", "E", "F", "F#", "G", "Ab", "A", "Bb", "B"]
             let essentialPadding = isLast ? "" : " "
-            return roots[chord.root] + chord.quality + essentialPadding
+            
+            var root = chord.root + transpose
+            if root < 0 { root += 12 }
+            if root >= 12 { root -= 12 }
+            
+            return roots[root] + chord.quality + essentialPadding
         case .spacer:
             return ""
         case .noChord:

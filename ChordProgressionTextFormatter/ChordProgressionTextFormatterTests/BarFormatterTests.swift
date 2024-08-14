@@ -94,4 +94,16 @@ final class BarFormatterTests: XCTestCase {
         let formatted = formatter.formatted
         XCTAssertEqual(formatted, "N.C.  ")
     }
+    
+    func testTranspose() throws {
+        let bar = Bar(components: [
+            .chord(chord: Chord(root: 0, quality: "")), // "C"
+            .chord(chord: Chord(root: 0, quality: "")), // "C"
+        ])
+        
+        let formatter = BarFormatter(bar: bar, barWidth: 4, transpose: 1)
+        let formatted = formatter.formatted
+        XCTAssertEqual(formatted, "C# C#")
+    }
+
 }
