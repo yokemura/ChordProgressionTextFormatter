@@ -24,6 +24,10 @@ struct ChordProgressionTextFormatter: ParsableCommand {
             help: "transpose")
     var transpose: Int = 0
     
+    @Option(name: .shortAndLong,
+            help: "bar width")
+    var width: Int = 12
+    
     func run() throws {
         var input = ""
         while let line = readLine(strippingNewline: false) {
@@ -32,7 +36,7 @@ struct ChordProgressionTextFormatter: ParsableCommand {
         
         let doc = try! Document.fromString(input)
 
-        let out = DocumentFormatter(document: doc, barWidth: 12, transpose: transpose).formatted
+        let out = DocumentFormatter(document: doc, barWidth: width, transpose: transpose).formatted
         
         print(out)
     }
