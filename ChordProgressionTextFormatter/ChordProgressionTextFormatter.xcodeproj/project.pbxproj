@@ -14,6 +14,8 @@
 		4B64060F2C6CD7CF00F9FEC8 /* BarFormatterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B64060E2C6CD7CF00F9FEC8 /* BarFormatterTests.swift */; };
 		4B6406112C6CDDC800F9FEC8 /* DocumentFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6406102C6CDDC800F9FEC8 /* DocumentFormatter.swift */; };
 		4B6406122C6CDDC800F9FEC8 /* DocumentFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6406102C6CDDC800F9FEC8 /* DocumentFormatter.swift */; };
+		4B6406152C6D9A0000F9FEC8 /* ChordProgressionTextFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6406142C6D9A0000F9FEC8 /* ChordProgressionTextFormatter.swift */; };
+		4B6406182C6D9ED800F9FEC8 /* ArgumentParser in Frameworks */ = {isa = PBXBuildFile; productRef = 4B6406172C6D9ED800F9FEC8 /* ArgumentParser */; };
 		4BC3BCEC2C6B450400A1448E /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC3BCEB2C6B450400A1448E /* main.swift */; };
 		4BC3BCF32C6B453C00A1448E /* Chord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC3BCF22C6B453C00A1448E /* Chord.swift */; };
 		4BC3BCFE2C6B4EC700A1448E /* ChordProgressionTextFormatterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC3BCFD2C6B4EC700A1448E /* ChordProgressionTextFormatterTests.swift */; };
@@ -41,7 +43,8 @@
 		4B64060B2C6C4A7D00F9FEC8 /* BarFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarFormatter.swift; sourceTree = "<group>"; };
 		4B64060E2C6CD7CF00F9FEC8 /* BarFormatterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarFormatterTests.swift; sourceTree = "<group>"; };
 		4B6406102C6CDDC800F9FEC8 /* DocumentFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentFormatter.swift; sourceTree = "<group>"; };
-		4BC3BCE82C6B450400A1448E /* ChordProgressionTextFormatter */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ChordProgressionTextFormatter; sourceTree = BUILT_PRODUCTS_DIR; };
+		4B6406142C6D9A0000F9FEC8 /* ChordProgressionTextFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChordProgressionTextFormatter.swift; sourceTree = "<group>"; };
+		4BC3BCE82C6B450400A1448E /* cptf */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = cptf; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BC3BCEB2C6B450400A1448E /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		4BC3BCF22C6B453C00A1448E /* Chord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chord.swift; sourceTree = "<group>"; };
 		4BC3BCFB2C6B4EC700A1448E /* ChordProgressionTextFormatterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChordProgressionTextFormatterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -55,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B6406182C6D9ED800F9FEC8 /* ArgumentParser in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,19 +72,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4B6406162C6D9ED800F9FEC8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		4BC3BCDF2C6B450400A1448E = {
 			isa = PBXGroup;
 			children = (
 				4BC3BCEA2C6B450400A1448E /* ChordProgressionTextFormatter */,
 				4BC3BCFC2C6B4EC700A1448E /* ChordProgressionTextFormatterTests */,
 				4BC3BCE92C6B450400A1448E /* Products */,
+				4B6406162C6D9ED800F9FEC8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
 		4BC3BCE92C6B450400A1448E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4BC3BCE82C6B450400A1448E /* ChordProgressionTextFormatter */,
+				4BC3BCE82C6B450400A1448E /* cptf */,
 				4BC3BCFB2C6B4EC700A1448E /* ChordProgressionTextFormatterTests.xctest */,
 			);
 			name = Products;
@@ -96,6 +108,7 @@
 				4B6406082C6C226400F9FEC8 /* Document.swift */,
 				4B64060B2C6C4A7D00F9FEC8 /* BarFormatter.swift */,
 				4B6406102C6CDDC800F9FEC8 /* DocumentFormatter.swift */,
+				4B6406142C6D9A0000F9FEC8 /* ChordProgressionTextFormatter.swift */,
 			);
 			path = ChordProgressionTextFormatter;
 			sourceTree = "<group>";
@@ -125,8 +138,11 @@
 			dependencies = (
 			);
 			name = ChordProgressionTextFormatter;
+			packageProductDependencies = (
+				4B6406172C6D9ED800F9FEC8 /* ArgumentParser */,
+			);
 			productName = ChordProgressionTextFormatter;
-			productReference = 4BC3BCE82C6B450400A1448E /* ChordProgressionTextFormatter */;
+			productReference = 4BC3BCE82C6B450400A1448E /* cptf */;
 			productType = "com.apple.product-type.tool";
 		};
 		4BC3BCFA2C6B4EC700A1448E /* ChordProgressionTextFormatterTests */ = {
@@ -173,6 +189,9 @@
 				Base,
 			);
 			mainGroup = 4BC3BCDF2C6B450400A1448E;
+			packageReferences = (
+				4B6406132C6D99DD00F9FEC8 /* XCRemoteSwiftPackageReference "swift-argument-parser" */,
+			);
 			productRefGroup = 4BC3BCE92C6B450400A1448E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -200,6 +219,7 @@
 			files = (
 				4BC3BCF32C6B453C00A1448E /* Chord.swift in Sources */,
 				4B6406092C6C226400F9FEC8 /* Document.swift in Sources */,
+				4B6406152C6D9A0000F9FEC8 /* ChordProgressionTextFormatter.swift in Sources */,
 				4BC3BD042C6B527100A1448E /* Bar.swift in Sources */,
 				4B64060C2C6C4A7D00F9FEC8 /* BarFormatter.swift in Sources */,
 				4B6406112C6CDDC800F9FEC8 /* DocumentFormatter.swift in Sources */,
@@ -350,7 +370,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2Z7AZ9RMWS;
 				ENABLE_HARDENED_RUNTIME = YES;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = cptf;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -361,7 +381,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2Z7AZ9RMWS;
 				ENABLE_HARDENED_RUNTIME = YES;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = cptf;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
@@ -427,6 +447,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		4B6406132C6D99DD00F9FEC8 /* XCRemoteSwiftPackageReference "swift-argument-parser" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-argument-parser.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.5.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4B6406172C6D9ED800F9FEC8 /* ArgumentParser */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4B6406132C6D99DD00F9FEC8 /* XCRemoteSwiftPackageReference "swift-argument-parser" */;
+			productName = ArgumentParser;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 4BC3BCE02C6B450400A1448E /* Project object */;
 }

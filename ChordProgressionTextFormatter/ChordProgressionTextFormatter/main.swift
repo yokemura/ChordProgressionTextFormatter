@@ -41,8 +41,4 @@ let input = """
 |Abm       |Db7    G7   |Gb          |
 """
 
-let doc = try! Document.fromString(input)
-
-let out = DocumentFormatter(document: doc, barWidth: 12, transpose: 2).formatted
-
-print(out)
+ChordProgressionTextFormatter.main()
